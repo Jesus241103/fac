@@ -1,0 +1,58 @@
+.contenedor3 {
+    min-width: 85%;
+    margin-left: 15%;
+    height: 99vh;
+    justify-items: center;
+}
+
+.tabla-contenedor {
+    width: 90%;
+    margin-top: 2vh;
+    max-height: 69vh;
+    overflow-y: auto;
+    border: solid 1px;
+    font-size: smaller;
+}
+
+.tabla thead th{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+.search {
+    height: 35px !important;
+    font-size: smaller;
+}
+
+.div_derecho1 {
+    width: 80%;
+    align-items: start;
+    min-height: 7vh;
+    max-height: 7vh;
+    margin: 0 5%;
+}
+
+.cont {
+    display: flex;
+    width: 100%;
+}
+
+.btn1,
+.btn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 40%;
+    font-size: small;
+    gap: 100px;
+    margin: 0 5% 0 0;
+}
+
+th:last-child,
+td:last-child {
+    width: 20%;
+}

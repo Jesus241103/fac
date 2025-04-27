@@ -1,0 +1,23 @@
+.principal{
+    background-image: url("/view/img/shop.jpg");
+    background-size: cover;
+}
+.containedor{
+    padding: 15% 8%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: start;
+    justify-content: flex-start;
+    max-width: 40%;
+}
+
+.item:nth-child(1),
+.item:nth-child(2),
+.item:nth-child(3) {
+    text-align: center;
+    padding: 5px;
+}
+.boton{
+    margin: 5px;
+}

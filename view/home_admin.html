@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/view/style/home_admin.css">
+    <link rel="stylesheet" href="/view/style/style_tabla_consulta_admin.css">
+
+
+</head>
+<body>
+    <div class="cuerpo">
+        <!-- BARRA LATERAL -->
+        <nav class="barra_lat bg-dark d-flex flex-column p-3 position-fixed vh-100 ">
+                    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active elem" id="btn0"> INICIO </button>
+                        <button class="nav-link elem" id="btn_consultar"> CONSULTAR </button>
+                        <button class="nav-link elem" id="btn_agregar_lat"> AGREGAR </button>
+                        <button class="nav-link elem" id="btn_salir"> SALIR </button>
+                    </div>            
+        </nav>
+
+        <!-- CONTENEDOR NUEVO PRODUCTO -->
+        <div class="contenedor1" style="display: none">
+            <div class="cabecera">
+                <h4 style="padding: 20px;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis ipsa totam quaerat reprehenderit assumenda nemo perspiciatis in illum eos minima.
+                </h4>
+                <hr>
+            </div>
+            <form id="formulario" class="parent container" method="post">
+                <div class="div1 item">
+                    <label for="id" class="form-label">ID Producto</label>
+                    <input id="id" name="id" type="number" placeholder="00000" class="form-control" min="100">
+                </div>
+                <div class="div2 item">
+                    <button id="scanner" name="scanner" class="btn btn-secondary">SCANNER</button>
+                </div>
+                <div class="div3 item">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Arroz">
+                </div>
+                <div class="div4 item">
+                    <label for="precio" class="form-label">Precio</label>
+                    <input id="precio" name="precio" type="number" placeholder="100$" class="form-control" min="1">
+                </div>
+                <div class="div5 item">
+                    <label for="iva" class="form-label">IVA</label>
+                    <input id="iva" name="iva" type="number" placeholder="10%" class="form-control" min="0", max="99">
+                </div>
+                <div class="div6 item">
+                    <button type="reset" id="reset" name="reset" class="btn btn-secondary btntow">Restar</button>
+                    <input type="submit" id="submit" name="submit" class="btn btn-primary btntow">
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+        <!-- TABLA DE PRODUCTOS -->
+        <div class="contenedor3" style="display: none">
+            <div class="cabecera">
+                <h4 style="padding: 20px;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis ipsa totam quaerat reprehenderit assumenda nemo perspiciatis in illum eos minima.
+                </h4>
+                <hr>
+            </div>
+            <div class="div_derecho1">
+                <input type="search" class="form-control search shadow-sm p-3 mb-5 bg-body-tertiary rounded" placeholder="Buscar" id="input_busqueda_admin"> 
+            </div>
+            <div class="tabla-contenedor shadow mb-5 bg-body-tertiary">
+                <table class="table table-hover tabla" id="tabla">
+                    <thead class="tabla_cabecera">
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">IVA</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">ACCION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody_admin">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- Modal MODIFICAR-->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="fs-5" id="titulo_modal" tabindex="-1">Modifique los Datos de su Preferencia:</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" id="close_modal" aria-label="Close"></button>
+        </div>
+        <div class="div_modificar" >
+            <form action="" class="form-control formulario_modificar">
+                <label for="idX" class="form-label">ID Producto</label>
+                <input id="idX" name="idX" class="form-control" disabled>
+                <label for="nombreX" class="form-label">Nombre</label>
+                <input id="nombreX" name="nombreX" type="text" class="form-control" placeholder="Arroz">
+                <label for="precioX" class="form-label">Precio</label>
+                <input id="precioX" name="precioX" type="number" placeholder="100$" class="form-control" min="1">
+                <label for="ivaX" class="form-label">IVA</label>
+                <input id="ivaX" name="ivaX" type="number" placeholder="10%" class="form-control" min="0", max="99">
+            </form>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" class="btn btn-primary btntow btn_modifi" name="modal_send" id="modal_send">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/view/scrip_view/tabla_consulta_admin.js"></script>
+        <script src="/view/scrip_view/float.js"></script>
+        <script src="/view/scrip_view/barra_lateral_admin.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    </div>
+</body>
+</html>

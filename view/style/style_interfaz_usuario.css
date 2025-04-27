@@ -1,0 +1,228 @@
+/* Variables para paleta de colores y tipografía */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #1abc9c;
+  --bg-light: #f8f9fa;
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset y box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+html, body {
+  height: 100%;
+  /*overflow: hidden;  Evitar scroll en el body */
+}
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Layout principal: dos columnas flexibles */
+.d1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Paneles de factura y catálogo */
+.container1,
+.container2 {
+  background: var(--text-light);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.container1 {
+  flex: 1 1 400px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column; /* para el sticky del pie */
+}
+.container2 {
+  flex: 2 1 500px;
+}
+
+/* Estilos del formulario de facturación */
+.formulario {
+  background: var(--bg-light);
+  padding: 0.5rem;        /* FORMULARIO MÁS COMPACTO */
+  margin-bottom: 0.2rem;
+  border-radius: 0.5rem;
+}
+.formulario h2 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+.formulario .form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+.formulario .form-control {
+  margin-bottom: 0.2rem;  /* menos separación entre inputs */
+  border-radius: 0.5rem;
+  font-size: small;
+}
+
+/* Contenedores de tablas con scroll y bordes suaves */
+.div_lista,
+.div_tabla {
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  overflow-y: auto;         /* Hacer scroll solo dentro del contenedor */
+  overflow-x: hidden;       /* Evitar el scroll horizontal */
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Mantener la sombra */
+}
+.div_lista{
+  height: 380px;
+  max-height: 380px;        /* Mantener altura fija */
+}
+
+/* Scrollbar suave */
+.div_lista::-webkit-scrollbar,
+.div_tabla::-webkit-scrollbar {
+  width: 6px;
+}
+.div_lista::-webkit-scrollbar-thumb,
+.div_tabla::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* Encabezados de tabla fijos y estilizados */
+.table thead th {
+  background: var(--primary-color) !important;
+  color: var(--text-light) !important;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 600;
+}
+.table tbody tr:nth-child(even) {
+  background: var(--bg-light);
+}
+.table-hover tbody tr:hover {
+  background: var(--accent-color) !important;
+  color: var(--text-light) !important;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+}
+
+/* Panel inferior: totales y botón */
+.inferior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: sticky;       /* PIE pegado al fondo */
+  bottom: 0;
+  background: var(--text-light);
+  padding: 0.3rem 0.7rem;
+  margin: 0;
+  z-index: 10;
+  font-size: small;
+  height: 58px;        /* altura fija */
+  max-height: 58px;
+}
+.resultado1,
+.resultado2 {
+  font-weight: 600;
+}
+.btn_lista {
+  min-width: 80px;
+  border-radius: 0.3rem;
+  font-size: 12px;
+}
+
+/* Estilos de botones y búsqueda */
+.btn,
+.btntow {
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+
+.div_derecho0{
+  height: 15%;
+}
+.div_derecho{
+  height: 85%;
+}
+
+.div_tabla{
+  height: auto;
+  max-height: 510px;
+}
+
+.div_derecho1 {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.search {
+  flex: 1;
+  border-radius: 0.3rem;
+}
+.derecho_btn {
+  flex: 0;
+  width: auto;
+}
+
+/* Inputs de cantidad y acciones en la lista */
+.input_cantidad {
+  width: 50px;
+  margin-right: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+/* Media Queries: dispositivos móviles y tablets */
+@media (max-width: 768px) {
+  /* Apilar columnas */
+  body{
+    overflow: auto; /* Permitir scroll en el body para móviles */
+  }
+  .d1 {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .container1,
+  .container2 {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+  /* Ajuste de formularios y tablas */
+  .formulario {
+    padding: 0.5rem;
+  }
+  .div_lista {
+    max-height: 250px;     /* altura fija menor en móvil */
+  }
+  .div_tabla {
+    max-height: none;      /* catálogo puede crecer */
+  }
+  /* Pie de totales */
+  .inferior {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .div_tabla{
+    height: auto;
+    max-height: 390px;
+  }
+}

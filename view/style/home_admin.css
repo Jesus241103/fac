@@ -1,0 +1,107 @@
+div.cuerpo{
+    display: flex;
+}
+
+.barra_lat{
+    height: 99vh;
+    max-width: 15%;
+    min-width: 15%;
+    align-items: center;
+    padding-top: 50%;
+}
+.elem{
+    margin-top: 20%;
+}
+
+div.contenedor1{
+    min-width: 85%;
+    margin-left: 15%;
+    height: 99vh
+}
+
+
+.item:nth-child(1),
+.item:nth-child(2),
+.item:nth-child(3),
+.item:nth-child(4),
+.item:nth-child(5) {
+    width: 350px;
+    flex-grow: 1;
+}
+
+form.container{
+    max-width: 90%;
+    padding: 1% 5%;
+    gap: 10% 5%;
+}
+
+
+
+
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+} 
+.div1 {
+    grid-column: span 2 / span 2;
+}
+.div2 {
+    grid-column-start: 3;
+    align-self: flex-end;
+}
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row-start: 2;
+}
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row-start: 3;
+}
+.div5 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+    align-self: flex-end;
+}
+.div6 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    justify-content: flex-end;
+    text-align: end;
+    padding-top: 10px;
+}
+.btntow{
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+.div_modificar label{
+    margin-left: 55px;
+    font-size: small;
+}
+.formulario_modificar input{
+    font-size: small;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.formulario_modificar{
+    padding: 30px 0 50px 0;
+}
+
+
+
+
+
+
