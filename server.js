@@ -9,14 +9,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Puerto del servidor
-const PORT = 3000;
-app.set("port", PORT);
-
 // Montar archivos estáticos (HTML, CSS, JS)
 app.use("/view", express.static(path.join(__dirname, "./view")));
 app.get("/view", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./view/index.html"));
+  res.sendFile(path.resolve(__dirname, "./view/index.html"));
 });
 
 // Importar y usar métodos desde módulos externos
@@ -41,9 +37,5 @@ metodo_patch1(app);
 const endpoint = require("./node/endpoint.js");
 endpoint(app);
 
-// Iniciar el servidor
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
-
-//http://127.0.0.1:3000/view/index.html
+// Exportar el servidor como función para Vercel
+module.exports = app;
