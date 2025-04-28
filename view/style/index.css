@@ -1,23 +1,83 @@
-.principal{
+/* Fuente global */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow: hidden;
+  }
+  
+  /* Navbar translúcida con blur */
+  .navbar-blur {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 1rem;
+  }
+  
+  /* Hero Section con Parallax */
+  .hero-section {
+    position: relative;
+    height: 100vh;
     background-image: url("/view/img/shop.jpg");
     background-size: cover;
-}
-.containedor{
-    padding: 15% 8%;
-    flex-direction: row;
-    flex-wrap: wrap;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
     align-items: center;
-    align-content: start;
-    justify-content: flex-start;
-    max-width: 40%;
-}
-
-.item:nth-child(1),
-.item:nth-child(2),
-.item:nth-child(3) {
-    text-align: center;
-    padding: 5px;
-}
-.boton{
-    margin: 5px;
-}
+    justify-content: center;
+  }
+  .hero-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  /* Animación de fade-in */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Botones animados */
+  .btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+  }
+  .btn-animated::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.2);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+  }
+  .btn-animated:hover::before {
+    transform: scaleY(1);
+  }
+  .btn-animated i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  .btn-animated:hover i {
+    transform: translateX(5px);
+  }
+  
+  /* Titulares */
+  .hero-content h1 span {
+    font-weight: 700;
+  }
+  
+  /* Ajustes responsive */
+  @media (max-width: 768px) {
+    .display-4 { font-size: 2.5rem; }
+    .lead { font-size: 1rem; }
+    .btn-lg { padding: 0.75rem 1.25rem; font-size: 1rem; }
+  }
+  
