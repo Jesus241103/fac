@@ -14,6 +14,9 @@ app.use("/view", express.static(path.join(__dirname, "./view")));
 app.get("/view", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./view/index.html"));
 });
+app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./view/index.html"));
+});
 
 // Importar y usar métodos desde módulos externos
 const metodo_post = require("./node/post.js");
