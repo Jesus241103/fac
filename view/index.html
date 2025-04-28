@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISTEMA DE FACTURACION</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/view/style/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio - FactuPro</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/view/style/index.css">
 </head>
 <body>
 
-<div class="principal">
-    <nav class="navbar navbar-dark bg-dark fixed-top nav justify-content-center">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Disabled</a>
-            </li>
-          </ul>
-    </nav>  
-    <div class="containedor">
-        <h2 class="text-center text-primary mt-3 text-dark">TITLE OBJETIVO</h2>
-        <p class="item">Lorem ipsum dolor sit amet consectetur adipisicing. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, alias. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique eum corporis fugiat ut voluptatibus eos quisquam itaque aut ab rerum!</p>
-        <div class="item">
-            <a id="inicio" name="inicio" class="btn btn-primary boton" href="/view/home_user.html">Inicio Usuario</a>
-            <a id="admin" name="admin" class="btn btn-primary boton" href="/view/home_admin.html">Inicio Admin</a>     
-        </div>
+  <!-- NAVBAR TRANSLÚCIDA -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-blur">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">FactuR</a>
     </div>
-</div>
-    
+  </nav>
+
+  <!-- SECCIÓN PRINCIPAL CON PARALLAX -->
+  <section class="hero-section d-flex align-items-center">
+    <div class="overlay"></div>
+    <div class="container text-center hero-content">
+      <h1 class="display-4 text-white mb-3">Bienvenido a <span class="text-primary">FactuR</span></h1>
+      <p class="lead text-light mb-4">Gestiona tus ventas y clientes de forma ágil y eficiente, con estilo y diversión.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="/view/home_user.html" class="btn btn-lg btn-primary btn-animated">Usuario <i class="bi bi-arrow-right-circle"></i></a>
+        <a href="/view/home_admin.html" class="btn btn-lg btn-outline-light btn-animated">Admin <i class="bi bi-gear-fill"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
