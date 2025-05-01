@@ -2,7 +2,7 @@ let misql = require("mysql2");
 let miconexion = misql.createConnection({
     host: "yamabiko.proxy.rlwy.net",
     database: "facturacion",
-    user: "roott",
+    user: "root",
     password: "xAaeLAuAJAtOEtKQXcCIwUxVBPGtpTFB",
     port:58416,
 });
